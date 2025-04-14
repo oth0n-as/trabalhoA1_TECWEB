@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LOGIN */
+.login-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-card h2 {
+  margin-bottom: 1.5rem;
+  color: #4B0082;
+  text-align: center;
+}
+
+.login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-card input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-card button {
+  padding: 12px;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-card button:hover {
+  background-color: #7e3ff2;
+}
+
+/* DASHBOARD GERAL */
+#app {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 240px;
+  background-color: #f4f0ff;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #4b0082;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #4b0082;
+  text-align: left;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.sidebar button:hover {
+  background-color: #e6d6fa;
+}
+
+.sidebar button.ativo {
+  background-color: #d4b2ff;
+  font-weight: bold;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo {
+  flex: 1;
+  padding: 2rem;
+  background: linear-gradient(to right, #e0c3fc, #8ec5fc);
+  overflow-y: auto;
+}
+
+.conteudo h3 {
+  color: #4B0082;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.conteudo form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.conteudo input,
+.conteudo button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.conteudo button {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.conteudo button:hover {
+  background-color: #7e3ff2;
+}
+
+/* BOTÃO SAIR */
+.logout-btn {
+  padding: 10px;
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  width: 100%;
+  text-align: left;
+  font-size: 1.1rem;
+  margin-top: auto;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #7e3ff2;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+  #app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 1rem;
+  }
+
+  .conteudo {
+    padding: 1rem;
+  }
+
+  .sidebar button {
+    font-size: 0.9rem;
+    padding: 0.4rem;
+  }
+}
+
+.lista-clientes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item-cliente {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.item-cliente span {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.item-cliente button {
+  background-color: #6a0dad;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
+}
+
+.item-cliente button:hover {
+  background-color: #7e3ff2;
+}
+
+.mensagem-sucesso,
+.mensagem-erro {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  z-index: 1000;
+  animation: aparecer 0.3s ease;
+}
+
+.mensagem-sucesso {
+  background-color: #6a0dad;
+}
+
+.mensagem-erro {
+  background-color: #c0392b;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#busca {
+  padding: 8px;
+  margin-bottom: 10px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.clientes-lista li {
+  background: #fff;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.clientes-lista button {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.clientes-lista button:hover {
+  background-color: #e60000;
+}
+
